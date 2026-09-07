@@ -9,6 +9,7 @@ Elsikts namn, färger och (verifierade mot koden i `WattNordic/`) faktiska datab
 - `CNAME` — `elsikt.com` (custom domain för GitHub Pages)
 - `index.html` — landningssida
 - `personvern.html` — personvernerklæring, nb-NO
+- `integritetspolicy.html` — integritetspolicy, sv-SE
 
 ## DNS-poster hos registraren
 
@@ -58,6 +59,13 @@ Om `gh api ... /pages` PUT för `https_enforced` inte accepteras direkt (GitHub 
 domänverifieringen är klar och certifikatet utfärdat först — kan ta upp till 24 h efter DNS): kör
 om samma kommando senare, eller slå på "Enforce HTTPS" manuellt under
 **Settings → Pages** i repot.
+
+## Innan lansering: databehandleravtal med Hetzner
+
+`personvern.html`/`integritetspolicy.html` beskriver Hetzner Online GmbH som databehandlare
+(personuppgiftsbiträde) för API-serverns drift. Det formella databehandleravtalet (DPA) tecknas
+inte av detta repo — ägaren måste själv acceptera/underteckna det i Hetzner-konsolen (Robot/Cloud
+Console → Data Processing Agreement) innan produktionsdrift med riktiga användardata påbörjas.
 
 ## Verifiering efter deploy
 
