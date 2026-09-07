@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elsikt — Sammenlign strømavtaler</title>
+<meta name="description" content="Elsikt sammenligner strømavtaler og gir en prisoversikt for husholdninger i Norge og Sverige. Ingen konto kreves.">
+<style>
+  :root {
+    --bg: #F5F7FA;
+    --bg-elevated: #FFFFFF;
+    --text: #10151C;
+    --text-muted: #4B5563;
+    --accent: #0C7489;
+    --border: #E2E8F0;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0B0F14;
+      --bg-elevated: #111820;
+      --text: #E8EDF2;
+      --text-muted: #9AA5B1;
+      --accent: #7DD3FC;
+      --border: #22303C;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 56px 20px 72px;
+  }
+  header { text-align: center; margin-bottom: 40px; }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .logo .mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 1.3rem;
+  }
+  .tagline {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  section {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+  h2 { font-size: 1.05rem; margin: 0 0 10px; }
+  p { margin: 0 0 10px; font-size: 0.95rem; }
+  p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px 20px; font-size: 0.95rem; }
+  footer {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  footer p { margin: 6px 0; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="logo"><span class="mark">⚡</span> Elsikt</span>
+    <p class="tagline">Sammenlign strømavtaler. Uten konto.</p>
+  </header>
+
+  <section>
+    <h2>Hva er Elsikt?</h2>
+    <p>Elsikt er en app som sammenligner strømavtaler og gir deg en prisoversikt basert på ditt
+    eget timeforbruk — for husholdninger i Norge og Sverige. Du logger ikke inn og oppretter
+    ingen konto: opplysningene du legger inn blir liggende på telefonen din.</p>
+  </section>
+
+  <section>
+    <h2>Personvern</h2>
+    <p>Les hva Elsikt behandler av opplysninger, og hvorfor, i
+    <a href="/personvern.html">personvernerklæringen</a>.</p>
+  </section>
+
+  <section>
+    <h2>Kontakt og support</h2>
+    <div class="links">
+      <a href="mailto:support@elsikt.com">support@elsikt.com</a>
+      <a href="/personvern.html">Personvernerklæring</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Utgitt av Fryst Oy, Finland</p>
+    <p>&copy; 2026 Fryst Oy</p>
+  </footer>
+</main>
+</body>
+</html>

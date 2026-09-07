@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personvernerklæring — Elsikt</title>
+<meta name="description" content="Personvernerklæring for Elsikt, utviklet og utgitt av Fryst Oy.">
+<style>
+  :root {
+    --bg: #F5F7FA;
+    --bg-elevated: #FFFFFF;
+    --text: #10151C;
+    --text-muted: #4B5563;
+    --accent: #0C7489;
+    --border: #E2E8F0;
+    --mark-bg: #FEF3C7;
+    --mark-text: #7A5B00;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0B0F14;
+      --bg-elevated: #111820;
+      --text: #E8EDF2;
+      --text-muted: #9AA5B1;
+      --accent: #7DD3FC;
+      --border: #22303C;
+      --mark-bg: #3A2E12;
+      --mark-text: #F5D06A;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px 72px;
+  }
+  a.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+  }
+  a.logo .mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 1rem;
+  }
+  h1 {
+    color: var(--text);
+    font-size: 1.6rem;
+    margin: 28px 0 4px;
+  }
+  .updated {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 28px;
+  }
+  section {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
+  h2 {
+    color: var(--text);
+    font-size: 1.05rem;
+    margin: 0 0 10px;
+  }
+  p { margin: 0 0 10px; font-size: 0.95rem; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0 0 10px; padding-left: 20px; font-size: 0.95rem; }
+  li { margin-bottom: 4px; }
+  a { color: var(--accent); }
+  .missing {
+    background: var(--mark-bg);
+    color: var(--mark-text);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+  footer {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  footer p { margin: 6px 0; }
+</style>
+</head>
+<body>
+<main>
+  <a class="logo" href="/"><span class="mark">⚡</span> Elsikt</a>
+  <h1>Personvernerklæring for Elsikt</h1>
+  <p class="updated">Sist oppdatert: 7.9.2026</p>
+
+  <section>
+    <h2>Behandlingsansvarlig</h2>
+    <p>Behandlingsansvarlig er <strong>Fryst Oy</strong>
+    (Y-tunnus/org.nr 2910711-9, VAT FI29107119), forretningssted Turku, Finland,
+    utvikler og utgiver av Elsikt.
+    Gateadresse: <span class="missing">[[SAKNAS: gateadresse — finns inte publicerad på wattitutka.fi/yritys.html
+    eller tietosuoja.html, bara forretningssted Turku]]</span>.
+    Kontakt: <a href="mailto:personvern@elsikt.com">personvern@elsikt.com</a></p>
+  </section>
+
+  <section>
+    <h2>Hva Elsikt gjør</h2>
+    <p>Elsikt sammenligner strømavtaler og gir en prisoversikt for husholdninger i Norge og Sverige,
+    ut fra ditt eget timeforbruk. Appen har ingen brukerkonto og krever ingen innlogging.</p>
+  </section>
+
+  <section>
+    <h2>Hvilke opplysninger vi behandler</h2>
+    <p><strong>Lagres bare på telefonen din</strong> (i appens lokale lagring — slettes når du
+    avinstallerer appen, eller når du selv tømmer appens lagring via telefonens systeminnstillinger):</p>
+    <ul>
+      <li>land, postnummer og prisområde (NO1–NO5)</li>
+      <li>valgt nettområde og nettselskap</li>
+      <li>om du har valgt Norgespris i sammenligningen</li>
+      <li>navnet på sist opplastede forbruksfil (selve filen lagres ikke på telefonen)</li>
+    </ul>
+    <p><strong>Sendes til serveren vår:</strong></p>
+    <ul>
+      <li>Når appen slår opp prisområdet eller nettselskapet ditt, sendes postnummeret til
+      serveren for oppslaget. Verken postnummeret eller svaret lagres på serveren.</li>
+      <li>Når du ber om en beregning, sendes forbruksfilen du selv laster opp (timeverdier fra
+      Elhub Min side eller nettselskapet ditt). Filen tolkes i minnet på serveren og slettes
+      umiddelbart etter at svaret er sendt. Vi lagrer verken filen, målepunkt-ID eller
+      timeverdiene.</li>
+      <li>Prisområde og nettområde sendes med, slik at riktige priser og riktig nettleie brukes.</li>
+    </ul>
+    <p><strong>Teknisk:</strong> Serveren ser IP-adressen din for å begrense antall forespørsler
+    (beskyttelse mot overbelastning). Adressen holdes bare i arbeidsminnet i inntil ett minutt av
+    gangen og skrives ikke til logg eller database knyttet til deg.</p>
+    <p>Vi bruker ingen analyseverktøy, annonse-ID-er eller sporing i appen, og appen sjekker ikke
+    etter oppdateringer via en tredjepartstjeneste.</p>
+  </section>
+
+  <section>
+    <h2>Hvor opplysningene behandles</h2>
+    <p>Serveren driftes hos Hetzner Online GmbH i Helsingfors, Finland (EU/EØS). Ingen opplysninger
+    overføres til land utenfor EU/EØS.</p>
+  </section>
+
+  <section>
+    <h2>Behandlingsgrunnlag</h2>
+    <p>Behandlingen av forbruksfilen og postnummeret skjer for å levere tjenesten du selv ber om
+    (personvernforordningen artikkel 6 nr. 1 bokstav b). Rate-begrensning (IP-adresse) skjer i vår
+    berettigede interesse i å holde tjenesten tilgjengelig (artikkel 6 nr. 1 bokstav f).</p>
+  </section>
+
+  <section>
+    <h2>Dine rettigheter</h2>
+    <p>Siden vi ikke lagrer opplysninger om deg på serveren, finnes det ingenting å utlevere, rette
+    eller slette på vår side. Opplysningene som ligger lokalt på telefonen sletter du selv ved å
+    avinstallere appen eller tømme appens lagring. Har du spørsmål, kontakt
+    <a href="mailto:personvern@elsikt.com">personvern@elsikt.com</a>. Du kan klage til
+    Datatilsynet (<a href="https://www.datatilsynet.no">datatilsynet.no</a>).</p>
+  </section>
+
+  <section>
+    <h2>Datakilder som vises i appen</h2>
+    <p>Spotpriser: ENTSO-E Transparency Platform. Valutakurs: Norges Bank. Nettleie: fri-nettleie
+    (CC BY 4.0). Nettområder: NVE (NLOD 2.0) og Kartverket (CC BY 4.0). Strømavtaler: Data levert
+    av Forbrukerrådet (strømpris.no).</p>
+    <p>Enkelte lenker til leverandører kan være affiliatelenker. De påvirker ikke utvalget eller
+    rekkefølgen i sammenligningen.</p>
+  </section>
+
+  <section>
+    <h2>Hva vi ikke gjør</h2>
+    <p>Vi selger eller deler ikke opplysningene dine med tredjeparter til markedsføring. Appen har
+    ingen reklame og ingen sporingsidentifikatorer, og appen og nettsiden vår bruker ikke
+    informasjonskapsler (cookies).</p>
+  </section>
+
+  <section>
+    <h2>Endringer</h2>
+    <p>Endrer vi hva appen behandler, oppdaterer vi denne erklæringen og datoen øverst før
+    endringen tas i bruk.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Fryst Oy &middot; Y-tunnus/org.nr 2910711-9 &middot; Forretningssted Turku, Finland</p>
+    <p><a href="/">Forside</a></p>
+  </footer>
+</main>
+</body>
+</html>
