@@ -13,8 +13,6 @@
     --text-muted: #4B5563;
     --accent: #0C7489;
     --border: #E2E8F0;
-    --mark-bg: #FEF3C7;
-    --mark-text: #7A5B00;
     color-scheme: light dark;
   }
   @media (prefers-color-scheme: dark) {
@@ -25,8 +23,6 @@
       --text-muted: #9AA5B1;
       --accent: #7DD3FC;
       --border: #22303C;
-      --mark-bg: #3A2E12;
-      --mark-text: #F5D06A;
     }
   }
   * { box-sizing: border-box; }
@@ -84,19 +80,16 @@
     font-size: 1.05rem;
     margin: 0 0 10px;
   }
+  h3 {
+    color: var(--text);
+    font-size: 0.95rem;
+    margin: 14px 0 6px;
+  }
   p { margin: 0 0 10px; font-size: 0.95rem; }
   p:last-child { margin-bottom: 0; }
   ul { margin: 0 0 10px; padding-left: 20px; font-size: 0.95rem; }
   li { margin-bottom: 4px; }
   a { color: var(--accent); }
-  .missing {
-    background: var(--mark-bg);
-    color: var(--mark-text);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.88rem;
-    font-weight: 600;
-  }
   footer {
     margin-top: 36px;
     padding-top: 24px;
@@ -106,6 +99,7 @@
     font-size: 0.85rem;
   }
   footer p { margin: 6px 0; }
+  .langswitch { font-size: 0.85rem; margin-bottom: 20px; }
 </style>
 </head>
 <body>
@@ -113,14 +107,14 @@
   <a class="logo" href="/"><span class="mark">⚡</span> Elsikt</a>
   <h1>Personvernerklæring for Elsikt</h1>
   <p class="updated">Sist oppdatert: 7.9.2026</p>
+  <p class="langswitch"><a href="/integritetspolicy.html">Läs på svenska (integritetspolicy)</a></p>
 
   <section>
     <h2>Behandlingsansvarlig</h2>
+    <!-- ADRESSE: fylles i av eier -->
     <p>Behandlingsansvarlig er <strong>Fryst Oy</strong>
-    (Y-tunnus/org.nr 2910711-9, VAT FI29107119), forretningssted Turku, Finland,
+    (Y-tunnus/org.nr 2910711-9, VAT FI29107119), Turku, Finland,
     utvikler og utgiver av Elsikt.
-    Gateadresse: <span class="missing">[[SAKNAS: gateadresse — finns inte publicerad på wattitutka.fi/yritys.html
-    eller tietosuoja.html, bara forretningssted Turku]]</span>.
     Kontakt: <a href="mailto:personvern@elsikt.com">personvern@elsikt.com</a></p>
   </section>
 
@@ -132,51 +126,88 @@
 
   <section>
     <h2>Hvilke opplysninger vi behandler</h2>
-    <p><strong>Lagres bare på telefonen din</strong> (i appens lokale lagring — slettes når du
-    avinstallerer appen, eller når du selv tømmer appens lagring via telefonens systeminnstillinger):</p>
+    <p><strong>Lagres på telefonen din</strong> (i appens egen lagring):</p>
     <ul>
       <li>land, postnummer og prisområde (NO1–NO5)</li>
       <li>valgt nettområde og nettselskap</li>
       <li>om du har valgt Norgespris i sammenligningen</li>
-      <li>navnet på sist opplastede forbruksfil (selve filen lagres ikke på telefonen)</li>
+      <li>en kopi av forbruksfilen du sist lastet opp — den lagres på telefonen (ikke bare navnet)
+      slik at appen fortsatt fungerer etter en app-oppdatering</li>
     </ul>
+    <p>Alt dette ligger til du selv <strong>nullstiller appen under Innstillinger</strong>
+    (sletter profilen og kopien av forbruksfilen), eller til du avinstallerer appen.</p>
     <p><strong>Sendes til serveren vår:</strong></p>
     <ul>
       <li>Når appen slår opp prisområdet eller nettselskapet ditt, sendes postnummeret til
-      serveren for oppslaget. Verken postnummeret eller svaret lagres på serveren.</li>
+      serveren for oppslaget.</li>
       <li>Når du ber om en beregning, sendes forbruksfilen du selv laster opp (timeverdier fra
-      Elhub Min side eller nettselskapet ditt). Filen tolkes i minnet på serveren og slettes
-      umiddelbart etter at svaret er sendt. Vi lagrer verken filen, målepunkt-ID eller
-      timeverdiene.</li>
+      Elhub Min side eller nettselskapet ditt). Filen behandles i minnet eller i en midlertidig
+      fil som slettes umiddelbart etter at forespørselen er ferdigbehandlet. Vi lagrer verken
+      filen, målepunkt-ID eller timeverdiene i noen database.</li>
       <li>Prisområde og nettområde sendes med, slik at riktige priser og riktig nettleie brukes.</li>
     </ul>
-    <p><strong>Teknisk:</strong> Serveren ser IP-adressen din for å begrense antall forespørsler
-    (beskyttelse mot overbelastning). Adressen holdes bare i arbeidsminnet i inntil ett minutt av
-    gangen og skrives ikke til logg eller database knyttet til deg.</p>
+  </section>
+
+  <section>
+    <h2>Begrensning av antall forespørsler</h2>
+    <p>Serveren ser IP-adressen din for å begrense antall forespørsler per minutt (beskyttelse mot
+    overbelastning). Adressen holdes bare i arbeidsminnet, ikke i en database, og fjernes derfra
+    ved neste forespørsel i et nytt tidsvindu.</p>
+  </section>
+
+  <section>
+    <h2>Teknisk driftslogg</h2>
+    <p>Som de fleste nettjenester fører serveren en teknisk driftslogg over innkommende
+    forespørsler, til feilsøking og drift. Denne loggen kan inneholde postnummeret du sendte i et
+    oppslag (se over), men ikke din faktiske IP-adresse — loggen viser adressen til vår egen
+    videresendingstjeneste, ikke din enhet. Loggen roteres automatisk og er begrenset til rundt
+    30 MB totalt; eldre linjer overskrives fortløpende. Den er ikke koblet til deg som person,
+    siden appen ikke har brukerkontoer.</p>
     <p>Vi bruker ingen analyseverktøy, annonse-ID-er eller sporing i appen, og appen sjekker ikke
     etter oppdateringer via en tredjepartstjeneste.</p>
   </section>
 
   <section>
     <h2>Hvor opplysningene behandles</h2>
-    <p>Serveren driftes hos Hetzner Online GmbH i Helsingfors, Finland (EU/EØS). Ingen opplysninger
-    overføres til land utenfor EU/EØS.</p>
+    <p><strong>API-tjenesten</strong> (backend-serveren appen snakker med) driftes av Hetzner
+    Online GmbH i Helsingfors, Finland (EU/EØS). Hetzner er vår databehandler under en
+    databehandleravtale. Ingen opplysninger fra API-tjenesten overføres til land utenfor EU/EØS.</p>
+    <p><strong>Nettsiden</strong> du leser nå (elsikt.com) er en statisk side som ligger hos
+    GitHub Pages, driftet av GitHub, Inc. (USA). GitHub logger besøkendes IP-adresse av
+    sikkerhetsgrunner, uavhengig av appen — se
+    <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubs
+    personvernerklæring</a>.</p>
   </section>
 
   <section>
     <h2>Behandlingsgrunnlag</h2>
     <p>Behandlingen av forbruksfilen og postnummeret skjer for å levere tjenesten du selv ber om
-    (personvernforordningen artikkel 6 nr. 1 bokstav b). Rate-begrensning (IP-adresse) skjer i vår
-    berettigede interesse i å holde tjenesten tilgjengelig (artikkel 6 nr. 1 bokstav f).</p>
+    (personvernforordningen artikkel 6 nr. 1 bokstav b). Begrensning av antall forespørsler og
+    den tekniske driftsloggen skjer i vår berettigede interesse i å holde tjenesten tilgjengelig
+    og trygg (artikkel 6 nr. 1 bokstav f).</p>
   </section>
 
   <section>
     <h2>Dine rettigheter</h2>
-    <p>Siden vi ikke lagrer opplysninger om deg på serveren, finnes det ingenting å utlevere, rette
-    eller slette på vår side. Opplysningene som ligger lokalt på telefonen sletter du selv ved å
-    avinstallere appen eller tømme appens lagring. Har du spørsmål, kontakt
-    <a href="mailto:personvern@elsikt.com">personvern@elsikt.com</a>. Du kan klage til
-    Datatilsynet (<a href="https://www.datatilsynet.no">datatilsynet.no</a>).</p>
+    <p>Du har i utgangspunktet rett til innsyn, retting, sletting, begrensning av behandlingen,
+    dataportabilitet og til å protestere mot behandlingen. Siden Elsikt ikke har brukerkontoer og
+    ikke lagrer forbruksfilen, postnummeret eller andre personopplysninger i noen database på
+    serversiden, er det i praksis lite å gi innsyn i, rette eller overføre der. Opplysningene som
+    ligger lokalt på telefonen din har du full kontroll over selv — se avsnittet over.</p>
+    <h3>Din rett til å protestere</h3>
+    <p>Begrensningen av antall forespørsler og den tekniske driftsloggen bygger på vår berettigede
+    interesse (artikkel 6 nr. 1 bokstav f). Du har rett til å protestere mot denne behandlingen
+    når som helst, av grunner knyttet til din situasjon (artikkel 21). Siden denne behandlingen er
+    nødvendig for å beskytte tjenesten mot overbelastning og misbruk, kan en protest i praksis bety
+    at appen ikke fungerer for deg.</p>
+    <p>Har du spørsmål eller ønsker å bruke en av rettighetene dine, kontakt
+    <a href="mailto:personvern@elsikt.com">personvern@elsikt.com</a>.</p>
+    <h3>Tilsynsmyndighet</h3>
+    <p>Du kan klage til tilsynsmyndigheten i landet du bor i: Datatilsynet i Norge
+    (<a href="https://www.datatilsynet.no">datatilsynet.no</a>) eller Integritetsskyddsmyndigheten
+    (IMY) i Sverige (<a href="https://www.imy.se">imy.se</a>). Fordi Fryst Oy er etablert i Finland,
+    er Tietosuojavaltuutetun toimisto (Personombudsmannens byrå) ledende tilsynsmyndighet
+    (<a href="https://tietosuoja.fi">tietosuoja.fi</a>).</p>
   </section>
 
   <section>
@@ -184,15 +215,15 @@
     <p>Spotpriser: ENTSO-E Transparency Platform. Valutakurs: Norges Bank. Nettleie: fri-nettleie
     (CC BY 4.0). Nettområder: NVE (NLOD 2.0) og Kartverket (CC BY 4.0). Strømavtaler: Data levert
     av Forbrukerrådet (strømpris.no).</p>
-    <p>Enkelte lenker til leverandører kan være affiliatelenker. De påvirker ikke utvalget eller
-    rekkefølgen i sammenligningen.</p>
+    <p>Hvis vi innfører affiliatelenker til leverandører: Enkelte lenker til leverandører er da
+    affiliatelenker. De påvirker ikke utvalget eller rekkefølgen i sammenligningen.</p>
   </section>
 
   <section>
     <h2>Hva vi ikke gjør</h2>
-    <p>Vi selger eller deler ikke opplysningene dine med tredjeparter til markedsføring. Appen har
-    ingen reklame og ingen sporingsidentifikatorer, og appen og nettsiden vår bruker ikke
-    informasjonskapsler (cookies).</p>
+    <p>Vi selger ikke opplysningene dine til tredjeparter. Vi deler dem heller ikke med
+    tredjeparter til markedsføring. Appen har ingen reklame og ingen sporingsidentifikatorer, og
+    appen og nettsiden vår bruker ikke informasjonskapsler (cookies).</p>
   </section>
 
   <section>
@@ -202,8 +233,8 @@
   </section>
 
   <footer>
-    <p>&copy; 2026 Fryst Oy &middot; Y-tunnus/org.nr 2910711-9 &middot; Forretningssted Turku, Finland</p>
-    <p><a href="/">Forside</a></p>
+    <p>&copy; 2026 Fryst Oy &middot; Y-tunnus/org.nr 2910711-9 &middot; Turku, Finland</p>
+    <p><a href="/">Forside</a> &middot; <a href="/integritetspolicy.html">Svenska</a></p>
   </footer>
 </main>
 </body>

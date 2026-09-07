@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integritetspolicy — Elsikt</title>
+<meta name="description" content="Integritetspolicy för Elsikt, utvecklad och utgiven av Fryst Oy.">
+<style>
+  :root {
+    --bg: #F5F7FA;
+    --bg-elevated: #FFFFFF;
+    --text: #10151C;
+    --text-muted: #4B5563;
+    --accent: #0C7489;
+    --border: #E2E8F0;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0B0F14;
+      --bg-elevated: #111820;
+      --text: #E8EDF2;
+      --text-muted: #9AA5B1;
+      --accent: #7DD3FC;
+      --border: #22303C;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px 72px;
+  }
+  a.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+  }
+  a.logo .mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 1rem;
+  }
+  h1 {
+    color: var(--text);
+    font-size: 1.6rem;
+    margin: 28px 0 4px;
+  }
+  .updated {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 28px;
+  }
+  section {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
+  h2 {
+    color: var(--text);
+    font-size: 1.05rem;
+    margin: 0 0 10px;
+  }
+  h3 {
+    color: var(--text);
+    font-size: 0.95rem;
+    margin: 14px 0 6px;
+  }
+  p { margin: 0 0 10px; font-size: 0.95rem; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0 0 10px; padding-left: 20px; font-size: 0.95rem; }
+  li { margin-bottom: 4px; }
+  a { color: var(--accent); }
+  footer {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  footer p { margin: 6px 0; }
+  .langswitch { font-size: 0.85rem; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <a class="logo" href="/"><span class="mark">⚡</span> Elsikt</a>
+  <h1>Integritetspolicy för Elsikt</h1>
+  <p class="updated">Senast uppdaterad: 7.9.2026</p>
+  <p class="langswitch"><a href="/personvern.html">Les på norsk (personvernerklæring)</a></p>
+
+  <section>
+    <h2>Personuppgiftsansvarig</h2>
+    <!-- ADRESS: fylls i av ägaren -->
+    <p>Personuppgiftsansvarig är <strong>Fryst Oy</strong>
+    (Y-tunnus/org.nr 2910711-9, VAT FI29107119), Åbo, Finland,
+    utvecklare och utgivare av Elsikt.
+    Kontakt: <a href="mailto:personvern@elsikt.com">personvern@elsikt.com</a></p>
+  </section>
+
+  <section>
+    <h2>Vad Elsikt gör</h2>
+    <p>Elsikt jämför elavtal och ger en prisöversikt för hushåll i Sverige och Norge, utifrån din
+    egen timförbrukning. Appen har inget användarkonto och kräver ingen inloggning.</p>
+  </section>
+
+  <section>
+    <h2>Vilka uppgifter vi behandlar</h2>
+    <p><strong>Sparas på din telefon</strong> (i appens egen lagring):</p>
+    <ul>
+      <li>land, postnummer och elområde (SE1–SE4)</li>
+      <li>en kopia av förbrukningsfilen du senast laddade upp — den sparas på telefonen (inte
+      bara namnet) så att appen fortsätter fungera efter en app-uppdatering</li>
+    </ul>
+    <p>Allt detta ligger kvar tills du själv <strong>nollställer appen under Inställningar</strong>
+    (raderar profilen och kopian av förbrukningsfilen), eller tills du avinstallerar appen.</p>
+    <p><strong>Skickas till vår server:</strong></p>
+    <ul>
+      <li>När appen slår upp ditt elområde skickas postnumret till servern för uppslaget.</li>
+      <li>När du begär en beräkning skickas förbrukningsfilen du själv laddar upp (timvärden
+      från ditt nätbolags Mina sidor). Filen behandlas i minnet eller i en tillfällig fil som
+      raderas omedelbart efter att anropet är färdigbehandlat. Vi sparar varken filen,
+      anläggnings-ID eller timvärdena i någon databas.</li>
+      <li>Elområdet skickas med, så att rätt priser används.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Begränsning av antalet anrop</h2>
+    <p>Servern ser din IP-adress för att begränsa antalet anrop per minut (skydd mot
+    överbelastning). Adressen hålls bara i arbetsminnet, inte i en databas, och tas bort därifrån
+    vid nästa anrop i ett nytt tidsfönster.</p>
+  </section>
+
+  <section>
+    <h2>Teknisk driftslogg</h2>
+    <p>Som de flesta nättjänster för servern en teknisk driftslogg över inkommande anrop, för
+    felsökning och drift. Loggen kan innehålla det postnummer du skickade i ett uppslag (se ovan),
+    men inte din faktiska IP-adress — loggen visar adressen till vår egen vidarebefordringstjänst,
+    inte din enhet. Loggen roteras automatiskt och är begränsad till ungefär 30 MB totalt; äldre
+    rader skrivs fortlöpande över. Den är inte kopplad till dig som person, eftersom appen inte
+    har användarkonton.</p>
+    <p>Vi använder inga analysverktyg, annons-ID:n eller spårning i appen, och appen kontrollerar
+    inte uppdateringar via en tredjepartstjänst.</p>
+  </section>
+
+  <section>
+    <h2>Var uppgifterna behandlas</h2>
+    <p><strong>API-tjänsten</strong> (backend-servern appen pratar med) driftas av Hetzner Online
+    GmbH i Helsingfors, Finland (EU/EES). Hetzner är vårt personuppgiftsbiträde enligt ett
+    personuppgiftsbiträdesavtal. Inga uppgifter från API-tjänsten förs över till länder utanför
+    EU/EES.</p>
+    <p><strong>Webbplatsen</strong> du läser just nu (elsikt.com) är en statisk sida som ligger hos
+    GitHub Pages, driftad av GitHub, Inc. (USA). GitHub loggar besökares IP-adress av
+    säkerhetsskäl, oberoende av appen — se
+    <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubs
+    integritetspolicy</a>.</p>
+  </section>
+
+  <section>
+    <h2>Rättslig grund</h2>
+    <p>Behandlingen av förbrukningsfilen och postnumret sker för att leverera tjänsten du själv
+    begär (dataskyddsförordningen artikel 6.1 b). Begränsningen av antalet anrop och den tekniska
+    driftsloggen sker med stöd av vårt berättigade intresse att hålla tjänsten tillgänglig och
+    säker (artikel 6.1 f).</p>
+  </section>
+
+  <section>
+    <h2>Dina rättigheter</h2>
+    <p>Du har i grunden rätt till tillgång, rättelse, radering, begränsning av behandlingen,
+    dataportabilitet och att invända mot behandlingen. Eftersom Elsikt inte har användarkonton och
+    inte sparar förbrukningsfilen, postnumret eller andra personuppgifter i någon databas på
+    serversidan finns det i praktiken lite att ge tillgång till, rätta eller föra över där.
+    Uppgifterna som ligger lokalt på din telefon har du full kontroll över själv — se avsnittet
+    ovan.</p>
+    <h3>Din rätt att invända</h3>
+    <p>Begränsningen av antalet anrop och den tekniska driftsloggen bygger på vårt berättigade
+    intresse (artikel 6.1 f). Du har rätt att invända mot denna behandling när som helst, av skäl
+    som hänför sig till din specifika situation (artikel 21). Eftersom behandlingen är nödvändig
+    för att skydda tjänsten mot överbelastning och missbruk kan en invändning i praktiken innebära
+    att appen inte fungerar för dig.</p>
+    <p>Har du frågor eller vill använda någon av dina rättigheter, kontakta
+    <a href="mailto:personvern@elsikt.com">personvern@elsikt.com</a>.</p>
+    <h3>Tillsynsmyndighet</h3>
+    <p>Du kan klaga hos tillsynsmyndigheten i det land du bor i: Integritetsskyddsmyndigheten
+    (IMY) i Sverige (<a href="https://www.imy.se">imy.se</a>) eller Datatilsynet i Norge
+    (<a href="https://www.datatilsynet.no">datatilsynet.no</a>). Eftersom Fryst Oy är etablerat i
+    Finland är Dataombudsmannens byrå (Tietosuojavaltuutetun toimisto) ledande tillsynsmyndighet
+    (<a href="https://tietosuoja.fi">tietosuoja.fi</a>).</p>
+  </section>
+
+  <section>
+    <h2>Datakällor som visas i appen</h2>
+    <p>Spotpriser: ENTSO-E Transparency Platform. Växelkurs: Riksbanken. Elavtal: källa läggs till
+    när avtalsjämförelsen för Sverige aktiveras.</p>
+    <p>Om vi inför affiliatelänkar till leverantörer: Vissa länkar till leverantörer är då
+    affiliatelänkar. De påverkar inte urvalet eller ordningen i jämförelsen.</p>
+  </section>
+
+  <section>
+    <h2>Vad vi inte gör</h2>
+    <p>Vi säljer inte dina uppgifter till tredje part. Vi delar dem inte heller med tredje part
+    för marknadsföring. Appen har ingen reklam och inga spårningsidentifierare, och appen och vår
+    webbplats använder inte kakor (cookies).</p>
+  </section>
+
+  <section>
+    <h2>Ändringar</h2>
+    <p>Ändrar vi vad appen behandlar uppdaterar vi denna policy och datumet överst innan
+    ändringen börjar gälla.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Fryst Oy &middot; Y-tunnus/org.nr 2910711-9 &middot; Åbo, Finland</p>
+    <p><a href="/">Startsida</a> &middot; <a href="/personvern.html">Norsk</a></p>
+  </footer>
+</main>
+</body>
+</html>

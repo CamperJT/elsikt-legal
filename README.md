@@ -23,6 +23,10 @@ GitHub Pages site":
 | A | `@` (elsikt.com) | `185.199.109.153` | GitHub Pages apex-IP 2/4 |
 | A | `@` (elsikt.com) | `185.199.110.153` | GitHub Pages apex-IP 3/4 |
 | A | `@` (elsikt.com) | `185.199.111.153` | GitHub Pages apex-IP 4/4 |
+| AAAA | `@` (elsikt.com) | `2606:50c0:8000::153` | GitHub Pages apex-IPv6 1/4 |
+| AAAA | `@` (elsikt.com) | `2606:50c0:8001::153` | GitHub Pages apex-IPv6 2/4 |
+| AAAA | `@` (elsikt.com) | `2606:50c0:8002::153` | GitHub Pages apex-IPv6 3/4 |
+| AAAA | `@` (elsikt.com) | `2606:50c0:8003::153` | GitHub Pages apex-IPv6 4/4 |
 | CNAME | `www` | `camperjt.github.io` | Pekar mot GitHub Pages-defaultdomänen för detta repo |
 | A | `api` (api.elsikt.com) | `PLACEHOLDER — Hetzner-serverns publika IP` | Backend (FastAPI), sätts när servern är provisionerad — se `docs/lanseringsplan-2026-09-03.md` i WattNordic |
 
@@ -57,7 +61,7 @@ om samma kommando senare, eller slå på "Enforce HTTPS" manuellt under
 
 ## Verifiering efter deploy
 
-- `dig +short elsikt.com` → ska ge de fyra GitHub-IP:erna ovan.
+- `nslookup elsikt.com` (Windows) → ska ge de fyra GitHub-IP:erna ovan.
 - `curl -sI https://elsikt.com/` → 200, och `https://elsikt.com/personvern.html` → 200.
 - Kontrollera i repots **Settings → Pages** att domänen visas som verifierad (grön bock), inte
   "improperly configured domain".
