@@ -106,12 +106,11 @@
 <main>
   <a class="logo" href="/"><span class="mark">⚡</span> Elsikt</a>
   <h1>Integritetspolicy för Elsikt</h1>
-  <p class="updated">Senast uppdaterad: 2026-09-07</p>
+  <p class="updated">Senast uppdaterad: 2026-09-08</p>
   <p class="langswitch"><a href="/personvern.html">Les på norsk (personvernerklæring)</a></p>
 
   <section>
     <h2>Personuppgiftsansvarig</h2>
-    <!-- ADRESS: fylls i av ägaren -->
     <p>Personuppgiftsansvarig är <strong>Fryst Oy</strong>
     (Y-tunnus/org.nr 2910711-9, VAT FI29107119), Åbo, Finland,
     utvecklare och utgivare av Elsikt.
@@ -154,12 +153,16 @@
 
   <section>
     <h2>Teknisk driftlogg</h2>
-    <p>Som de flesta nättjänster för servern en teknisk driftlogg över inkommande anrop, för
-    felsökning och drift. Loggen kan innehålla det postnummer du skickade i ett uppslag (se ovan).
-    Loggen visar normalt inte din faktiska IP-adress — den visar adressen till vår egen
-    proxyserver. Loggen roteras fortlöpande och äldre poster skrivs över automatiskt; den används
-    bara för felsökning och drift. Den är inte kopplad till dig som person, eftersom appen inte
-    har användarkonton.</p>
+    <p>Serverns åtkomstlogg — som annars skulle visa varje anrop med sökväg och IP-adress,
+    inklusive postnumret i ett uppslag — är avstängd i produktion. IP-adressen behandlas bara
+    tillfälligt i serverns arbetsminne, för att begränsa antalet anrop och förhindra missbruk
+    (berättigat intresse); den sparas inte i någon logg och kopplas inte till andra uppgifter.</p>
+    <p>Vi för fortfarande en enkel applikationslogg för drift och felsökning (start, jobbstatus,
+    fel). Den innehåller normalt varken din IP-adress eller ditt postnummer. Ett undantag: hittar
+    inte nätbolagsuppslaget någon data för postnumret du angav, skrivs postnumret i en
+    felsökningsrad, för att åtgärda luckor i vårt underlag över nätbolag. Loggen roteras
+    automatiskt och äldre poster skrivs över fortlöpande; den är inte kopplad till dig som person,
+    eftersom appen inte har användarkonton.</p>
     <p>Vi använder inga analysverktyg, annons-ID:n eller spårning i appen, och appen söker inte
     efter uppdateringar via en tredjepartstjänst.</p>
   </section>
